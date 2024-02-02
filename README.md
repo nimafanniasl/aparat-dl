@@ -1,24 +1,36 @@
-# Simple command line tool to download videos from Aparat, written in 🦀 as a fun side-project to learn more about this amazing language :)
+### Simple command line tool to download videos from Aparat!
+### Written in 🦀 as a fun side-project to learn more about this amazing language :)
+
+![Screenshot from 2024-02-02 23-03-15](https://github.com/nimafanniasl/aparat-dl/assets/76901932/5af2b4b8-8d09-4563-b32e-1591c839c824)
+
 
 ### Usage:
-For now this project doesn't have any installers, but i provide pre-build linux binaries for you to download and run.
+For now, this project doesn't have any installers, but I provide pre-built GNU/Linux binaries (X86_64) for you to download and run.
 
 Use wget to get the binary:
-```wget```
+
+```bash
+wget https://github.com/nimafanniasl/aparat-dl/raw/main/Binaries/aparat-dl
+```
 
 Then run it:
-```./aparat-dl --help```
+
+```bash
+./aparat-dl
+```
 
 Example:
 
-```./aparat-dl -l https://www.aparat.com/v/D9Emy -q 1080p```
+```bash
+./aparat-dl -l https://www.aparat.com/v/D9Emy -q 1080p
+```
 
-Also, you can move it to your PATH and run it from anywhere. but i'm working on a installer to do that automatically :)
+Also, you can move it to your PATH and run it from anywhere. but I'm working on an installer to do that automatically :)
 
 ### TODO:
 - [x] Downloads files correctly
-- [ ] Provide pre-built binery's for windows and macos
-- [ ] Get file save path as a optional arg from the user
-- [ ] Show a progress bar of downloading the file
+- [ ] Provide pre-built binaries for Windows and macOS
+- [ ] Get file save path as an optional arg from the user
+- [ ] Show a progress bar for downloading the file
 - [ ] Download playlists
-- [ ] Make a installer for the project.
+- [ ] Make an installer for the project.
