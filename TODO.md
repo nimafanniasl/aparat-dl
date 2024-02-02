@@ -1,0 +1,3 @@
+- [x] Downloads files correctly
+- [] Get file save path as a optional arg from the user
+- [] Show a progress bar of downloading the file
