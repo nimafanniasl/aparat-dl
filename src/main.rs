@@ -1,4 +1,3 @@
-use std::io;
 use std::fs::File;
 use clap::Parser;
 use regex::Regex;
@@ -14,6 +13,9 @@ struct Args {
 
     #[arg(short, long, default_value = "MAX")]
     quality: String,
+
+    #[arg(short, long, default_value = ".")]
+    save_folder: String,
 }
 
 fn main() {
@@ -35,13 +37,13 @@ fn main() {
                     let last_obj = links.as_array().unwrap().last().unwrap();
                     let link = last_obj["urls"].as_array().unwrap().get(0).unwrap().as_str().unwrap();
                     println!("{color_green}Max quality: {}{color_reset}", last_obj["profile"]);
-                    download_video(link, file_name);
+                    download_video(link, file_name, &args.save_folder);
                 },
                 _ => {
                     for link in links.as_array().unwrap() {
                         if link["profile"] == args.quality {
                             let link = link["urls"].as_array().unwrap().get(0).unwrap().as_str().unwrap();
-                            download_video(link, file_name);
+                            download_video(link, file_name, &args.save_folder);
                             break;
                         }
                     }
@@ -63,12 +65,12 @@ fn get_json_data(hash_value: &str) -> Result<Value, Box<dyn std::error::Error>> 
     Ok(json_value)
 }
 
-fn download_video(url: &str, file_name: &str) {
+fn download_video(url: &str, file_name: &str, save_path: &str) {
     let response = reqwest::blocking::get(url);
 
     match response {
         Ok(mut file) => {
-            let mut output = File::create(format!("{file_name}.mp4")).expect("Failed to create file");
+            let mut output = File::create(format!("{save_path}/{file_name}.mp4")).expect("Failed to create file");
             std::io::copy(&mut file, &mut output).expect("Failed to copy content");
             println!("{color_green}Video downloaded successfully!{color_reset}");
         },
