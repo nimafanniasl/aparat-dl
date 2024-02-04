@@ -34,4 +34,4 @@ Also, you can move it to your PATH and run it from anywhere. but I'm working on 
 - [ ] Download playlists
 - [ ] Make an installer for the project.
 - [ ] Use Github actions for automating releases
-- [ ] Define the JSON data from the api with a struct/enum as ![Marc Planard suggested here.](https://mstdn.social/@corpsmoderne@mamot.fr/111867224367431809)
+- [ ] Define the JSON data from the api with a struct/enum as [Marc Planard suggested here.](https://mstdn.social/@corpsmoderne@mamot.fr/111867224367431809)
