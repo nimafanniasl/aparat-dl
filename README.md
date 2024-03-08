@@ -31,7 +31,7 @@ Also, you can move it to your PATH and run it from anywhere. but I'm working on 
 - [ ] Provide pre-built binaries for Windows and macOS
 - [x] Get file save path as an optional arg from the user
 - [ ] Show a progress bar for downloading the file
-- [ ] Download playlists
+- [x] Download playlists
 - [ ] Make an installer for the project.
 - [ ] Use Github actions for automating releases
 - [ ] Define the JSON data from the api with a struct/enum as [Marc Planard suggested here.](https://mstdn.social/@corpsmoderne@mamot.fr/111867224367431809)

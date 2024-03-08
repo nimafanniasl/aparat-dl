@@ -77,8 +77,6 @@ fn download_vid_with_hash(link: &str, save_folder: &str, quality: &str) {
 fn get_dl_url(json_value: &Value, quality: &str) -> String {
 
     let links = &json_value["video"]["file_link_all"];
-    let file_name = &json_value["video"]["title"].as_str().unwrap();
-
     match quality {
         "MAX" => {
             let last_obj = links.as_array().unwrap().last().unwrap();
